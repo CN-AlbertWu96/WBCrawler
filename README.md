@@ -22,14 +22,14 @@
 
 ## 运行说明
 
-```python
+```
 $ python downloadData.py
 $ ls
 data    downloadData.py    extractData.py
 $ ls data
 2017-11-10-00_1027-11-11-00    ...
 $ ls 2017-11-10-00_1027-11-11-00
-1.txt    2.txt    ...
+1.txt    ...
 $ python extractData.py
 $ ls
 data    downloadData.py    extractData.py    final.csv
