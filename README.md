@@ -1,5 +1,44 @@
 # weibo_search
 
+## EN
+
+This project uses Weibo's advanced search to implement keyword-based content crawlers.
+
+![alt text](https://cn-albertwu96.github.io/img/process.png "process")
+
+## Crawl Html page
+
+> This part of the code is integrated in downloadData.py
+
+The first part simulates user login, using [fuck-login](https://github.com/xchaoinfo/fuck-login/blob/master/007%20weibo.com/weibo.com.py) provided by xchaoinfo. The way to log in is very simple. The cookie can be saved in a file after a successful login. If you need it later, you can use the requests to read the cookie file to crawl the microblog.
+
+The second part is to use Sina's advanced search function to search for Sina Weibo data of Khan keywords, [code reference](http://blog.csdn.net/heloowird/article/details/38149451), in this piece needs to engage Clear the composition of the address bar url.
+
+## Extract key content in html page
+
+> This part of the code is integrated in extractData.py
+
+The first part uses lxml's etree to implement html parsing and reading storage.
+
+The second part of the unicode_escape transcoding, to ensure that the Chinese display is normal with a text editor.
+
+## How to run
+
+```
+$ python downloadData.py
+$ ls
+data    downloadData.py    extractData.py
+$ ls data
+2017-11-10-00_1027-11-11-00    ...
+$ ls 2017-11-10-00_1027-11-11-00
+1.txt    ...
+$ python extractData.py
+$ ls
+data    downloadData.py    extractData.py    final.csv
+```
+
+## CN
+
 本项目利用微博的高级搜索实现基于关键词的内容爬虫
 
 ![alt text](https://cn-albertwu96.github.io/img/process.png "process")
